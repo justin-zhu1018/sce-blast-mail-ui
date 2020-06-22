@@ -1,0 +1,10 @@
+.form-wrapper {
+  /* margin-right: auto; */
+  /* margin-left: auto; */
+  margin-left: 10px;
+  max-width: 960px;
+}
+
+.button-right {
+  margin-left: 875px;
+}
