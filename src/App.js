@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import "./App.css";
 import Form from "./components/form.jsx";
+import ModalExample from "./componentsReactStrap/modal.jsx";
+import BlastMail from "./componentsReactStrap/blastmailRS.jsx";
 class App extends Component {
   constructor(props) {
     super(props);
@@ -16,7 +18,7 @@ class App extends Component {
   }
 
   handleData = (event) => {
-    event.preventDefault();
+    // event.preventDefault();
     this.setState(
       {
         submittedRecipients: this.state.recipients,
@@ -38,14 +40,17 @@ class App extends Component {
   };
 
   updateSubject = (e) => {
+    // console.log("update subject", e);
     this.setState({ subject: e });
   };
 
   updateRecipients = (e) => {
+    // console.log("update recipients", e);
     this.setState({ recipients: e });
   };
 
   updateData = (e) => {
+    // console.log("update data", e);
     this.setState({ data: e });
   };
 
@@ -53,7 +58,7 @@ class App extends Component {
     return (
       <div className="App-header">
         <h1>Email Thing</h1>
-        <Form
+        {/* <ModalExample
           handleData={this.handleData}
           recipients={this.state.recipients}
           subject={this.state.subject}
@@ -61,7 +66,28 @@ class App extends Component {
           updateData={this.updateData}
           updateSubject={this.updateSubject}
           updateRecipients={this.updateRecipients}
+          performCancel={this.performCancel}
+        /> */}
+        <BlastMail
+          performCancel={this.performCancel}
+          handleData={this.handleData}
+          recipients={this.state.recipients}
+          subject={this.state.subject}
+          data={this.state.data}
+          updateData={this.updateData}
+          updateSubject={this.updateSubject}
+          updateRecipients={this.updateRecipients}
+          checkConsole={this.checkConsole}
         />
+        {/* <Form
+          handleData={this.handleData}
+          recipients={this.state.recipients}
+          subject={this.state.subject}
+          data={this.state.data}
+          updateData={this.updateData}
+          updateSubject={this.updateSubject}
+          updateRecipients={this.updateRecipients}
+        /> */}
       </div>
     );
   }
