@@ -23,10 +23,10 @@ class App extends Component {
       {
         submittedRecipients: this.state.recipients,
         submittedSubject: this.state.subject,
-        submittedData: this.state.data,
+        // submittedData: this.state.data,
         recipients: "",
         subject: "",
-        data: "",
+        // data: "",
       },
       this.checkConsole
     );
@@ -36,7 +36,7 @@ class App extends Component {
     console.log("------------ Submit ------------");
     console.log("Recipients: ", this.state.submittedRecipients);
     console.log("Subject:", this.state.submittedSubject);
-    console.log("Data: ", this.state.submittedData);
+    console.log("Data: ", this.state.data);
   };
 
   updateSubject = (e) => {
