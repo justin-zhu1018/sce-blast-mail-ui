@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import { Editor } from "@tinymce/tinymce-react";
 export default function TextEditor(props) {
+  // function test() {
+  //   props.handleEditorChange();
+  // }
   return (
     <div>
       <Editor
@@ -20,11 +23,9 @@ export default function TextEditor(props) {
                 alignleft aligncenter alignright | \
                 bullist numlist outdent indent | help",
         }}
-        //   onChange={this.handleEditorChange}
         value={props.content}
         onEditorChange={props.handleEditorChange}
       />
     </div>
   );
-  //   }
 }

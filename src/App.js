@@ -3,7 +3,6 @@ import "./App.css";
 import Form from "./components/form.jsx";
 import ModalExample from "./componentsReactStrap/modal.jsx";
 import BlastMail from "./componentsReactStrap/blastmailRS.jsx";
-import TextEditor from "./TextEditor/textEditor.jsx";
 class App extends Component {
   constructor(props) {
     super(props);
@@ -57,10 +56,15 @@ class App extends Component {
     this.setState({ data: e });
   };
 
-  async handleEditorChange(content, editor) {
-    this.setState({ content });
-    console.log("Updating data", this.state.content);
-  }
+  // async handleEditorChange(content, editor) {
+  //   this.setState({ content });
+  //   console.log("Updating data",  this.state.content);
+  // }
+
+  handleEditorChange = (e) => {
+    this.setState({ content: e });
+    console.log("UPdate", this.state.content);
+  };
 
   handleSubmit = () => {
     console.log("Handle submit: ", this.state.content);
