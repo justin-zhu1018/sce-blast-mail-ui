@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 import FormRS from "./formRS.jsx";
+import TextEditor from "../TextEditor/textEditor.jsx";
+
 const ModalExample = (props) => {
   const { buttonLabel, className } = props;
 

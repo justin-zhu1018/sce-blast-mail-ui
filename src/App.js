@@ -3,6 +3,7 @@ import "./App.css";
 import Form from "./components/form.jsx";
 import ModalExample from "./componentsReactStrap/modal.jsx";
 import BlastMail from "./componentsReactStrap/blastmailRS.jsx";
+import TextEditor from "./TextEditor/textEditor.jsx";
 class App extends Component {
   constructor(props) {
     super(props);
@@ -14,7 +15,9 @@ class App extends Component {
       submittedSubject: "",
       submittedData: "",
       dataArray: [],
+      content: "<p><strong>Preloaded Data</strong></p>",
     };
+    this.handleEditorChange = this.handleEditorChange.bind(this);
   }
 
   handleData = (event) => {
@@ -54,6 +57,15 @@ class App extends Component {
     this.setState({ data: e });
   };
 
+  async handleEditorChange(content, editor) {
+    this.setState({ content });
+    console.log("Updating data", this.state.content);
+  }
+
+  handleSubmit = () => {
+    console.log("Handle submit: ", this.state.content);
+  };
+
   render() {
     return (
       <div className="App-header">
@@ -78,6 +90,9 @@ class App extends Component {
           updateSubject={this.updateSubject}
           updateRecipients={this.updateRecipients}
           checkConsole={this.checkConsole}
+          content={this.state.content}
+          handleEditorChange={this.handleEditorChange}
+          handleSubmit={this.handleSubmit}
         />
         {/* <Form
           handleData={this.handleData}
@@ -88,6 +103,12 @@ class App extends Component {
           updateSubject={this.updateSubject}
           updateRecipients={this.updateRecipients}
         /> */}
+        {/* <TextEditor
+          content={this.state.content}
+          handleEditorChange={this.handleEditorChange}
+          handleSubmit={this.handleSubmit}
+        /> */}
+        {/* <button onClick={this.handleSubmit}>Test</button> */}
       </div>
     );
   }

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Form, FormGroup, Label, Input } from "reactstrap";
+import TextEditor from "../TextEditor/textEditor";
 export default function formRS(props) {
   return (
     <div>
@@ -26,11 +27,16 @@ export default function formRS(props) {
         </FormGroup>
         <FormGroup>
           <Label>Text Area</Label>
-          <Input
+          {/* <Input
             type="textarea"
             value={props.data}
             onChange={(e) => props.updateData(e.target.value)}
-          ></Input>
+          ></Input> */}
+          <TextEditor
+            content={props.content}
+            handleEditorChange={props.handleEditorChange}
+            handleSubmit={props.handleSubmit}
+          />
         </FormGroup>
       </Form>
     </div>

@@ -32,6 +32,9 @@ export default function BlastMail(props) {
             updateRecipients={props.updateRecipients}
             updateSubject={props.updateSubject}
             updateData={props.updateData}
+            content={props.content}
+            handleEditorChange={props.handleEditorChange}
+            handleSubmit={props.handleSubmit}
           />
         </ModalBody>
         <ModalFooter>
